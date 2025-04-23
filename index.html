@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BAZ x Italianni's | 15% de Descuento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffdf7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      background: #10316b;
+      color: white;
+      width: 100%;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    #contador {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      background-color: #ffefc2;
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    button {
+      background-color: #ffc300;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      color: #10316b;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ffb000;
+    }
+    .beneficio {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>🎉 ¡15% de Descuento en Italianni’s!</h1>
+    <p>Un beneficio exclusivo solo para el Squad BAZ.  
+    Pero ojo, solo por 7 días.</p>
+
+    <div id="contador">
+      ⏳ Quedan <span id="dias">--</span> días, <span id="horas">--</span> hrs, <span id="minutos">--</span> min
+    </div>
+
+    <button onclick="activarBeneficio()">Quiero mi descuento</button>
+  </section>
+
+  <div class="beneficio">
+    Presenta este beneficio en Italianni’s y disfruta con sabor de urgencia. <br>
+    Válido del <strong>23 al 30 de abril</strong> 2025.
+  </div>
+
+  <script>
+    // Fecha de fin de campaña (30 abril 2025, 23:59)
+    const fechaLimite = new Date('2025-04-30T23:59:59').getTime();
+
+    function actualizarContador() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaLimite - ahora;
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById('dias').textContent = dias >= 0 ? dias : 0;
+      document.getElementById('horas').textContent = horas >= 0 ? horas : 0;
+      document.getElementById('minutos').textContent = minutos >= 0 ? minutos : 0;
+    }
+
+    setInterval(actualizarContador, 1000);
+
+    function activarBeneficio() {
+      const mensaje = encodeURIComponent("Hola, quiero activar mi beneficio del 15% en Italianni’s 🍝");
+      // Reemplaza con número de bot real, con código de país (ejemplo: 521... para México)
+      window.open(`https://wa.me/521XXXXXXXXXX?text=${mensaje}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
