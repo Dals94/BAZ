@@ -1,0 +1,4 @@
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="italiannis-fondo.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
