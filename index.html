@@ -7,63 +7,87 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffdf7;
-      color: #333;
+      font-family: 'Georgia', 'Segoe UI', serif;
+      background: #FDF6EC;
+      color: #2E2E2E;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
+
     .hero {
       padding: 4rem 2rem;
-      background: #10316b;
+      background: #007F3D; /* verde BAZ */
       color: white;
       width: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .hero h1 {
-      font-size: 2.5rem;
+
+    .hero img {
       margin-bottom: 1rem;
     }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      color: #FFD700; /* dorado cálido */
+    }
+
     .hero p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
+      font-family: 'Segoe UI', sans-serif;
     }
+
     #contador {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 2rem;
-      background-color: #ffefc2;
-      color: #333;
+      background-color: #fff4dd;
+      color: #8B0000; /* vino Italianni’s */
       padding: 1rem 2rem;
       border-radius: 10px;
       display: inline-block;
+      border: 2px solid #8B0000;
     }
+
     button {
-      background-color: #ffc300;
-      border: none;
+      background-color: #FFD700;
+      border: 2px solid white;
       padding: 1rem 2rem;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 8px;
-      color: #10316b;
+      color: #007F3D;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: all 0.3s ease-in-out;
     }
+
     button:hover {
-      background-color: #ffb000;
+      background-color: #FFE066;
+      transform: scale(1.05);
     }
+
     .beneficio {
       margin-top: 3rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .footer {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
 <body>
 
   <section class="hero">
+    <img src="https://www.italiannis.com.mx/static/img/logo_italiannis.svg" alt="Italianni’s" width="160">
     <h1>🎉 ¡15% de Descuento en Italianni’s!</h1>
-    <p>Un beneficio exclusivo solo para el Squad BAZ.  
-    Pero ojo, solo por 7 días.</p>
+    <p>Un beneficio exclusivo solo para el Squad BAZ.<br>Pero ojo, solo por 7 días.</p>
 
     <div id="contador">
       ⏳ Quedan <span id="dias">--</span> días, <span id="horas">--</span> hrs, <span id="minutos">--</span> min
@@ -73,8 +97,12 @@
   </section>
 
   <div class="beneficio">
-    Presenta este beneficio en Italianni’s y disfruta con sabor de urgencia. <br>
-    Válido del <strong>23 al 30 de abril</strong> 2025.
+    Presenta este beneficio en Italianni’s y disfruta con sabor de urgencia.<br>
+    <strong>Válido del 23 al 30 de abril 2025.</strong>
+  </div>
+
+  <div class="footer">
+    Campaña cortesía de BAZ + Präna / Power by beneficios & espagueti.
   </div>
 
   <script>
@@ -98,8 +126,7 @@
 
     function activarBeneficio() {
       const mensaje = encodeURIComponent("Hola, quiero activar mi beneficio del 15% en Italianni’s 🍝");
-      // Reemplaza con número de bot real, con código de país (ejemplo: 521... para México)
-      window.open(`https://wa.me/521XXXXXXXXXX?text=${mensaje}`, '_blank');
+      window.open(`https://wa.me/521XXXXXXXXXX?text=${mensaje}`, '_blank'); // <-- REEMPLAZA ESTE NÚMERO
     }
   </script>
 
